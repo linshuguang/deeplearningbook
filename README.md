@@ -59,6 +59,57 @@ The PCA is comprehensive in 1d case, however you need
 
 
 
+a random variable is just a description of the states that are possible; it must be coupled with a probability distribution that specifies how likely each of these states are
+
+The probability mass function(PMF) maps from a state of a random variable to the probability of that random variable taking on that state.probability density function (PDF) is used in continuous random variables.
+
+Sometimes we know the probability distribution over a set of variables and we want to know the probability distribution over just a subset of them. The probability distribution over the subset is known as the marginal probability distribution.
+
+In many cases, we are interested in the probability of some event, given that some other event has happened. This is called a conditional probability. 
+
+Computing the consequences of an action is called making an intervention query. conditional probability is not the same as causal modeling.(e.g. The conditional probability that a person is from Germany given that they speak German is quite high, but if a randomly selected person is taught to speak German, their country of origin does not change. )
+
+The covariance gives some sense of how much two values are linearly related to each other, as well as the scale of these variables. High absolute values of the covariance mean that the values change very much and are both far 
+from their respective means at the same time. If the sign of the covariance is positive, then both variables tend to take on relatively high values simultaneously. If the sign of the covariance is negative, then one variable 
+tends to take on a relatively high value at the times that the other takes on a relatively low value and vice versa.
+Other measures such as correlation normalize the contribution of each variable in order to measure only how much the variables are related, rather than also being affected by the scale of the separate variables
+
+Independence is a stronger requirement than zero covariance,it is possible for two variables to be dependent but have zero covariance. 
+
+The diagonal elements of the covariance give the variance.
+
+The Bernoulli and multinoulli distributions are sufficient to describe any distribution model with discrete variables for it is feasible to simply enumerate all of the states.
+
+The most commonly used distribution over real numbers is the normal distribution, also known as the Gaussian distribution.
+
+the normal distribution is a good default choice In the absence of prior knowledge about what form a distribution over the real numbers should take.
+
+In the context of deep learning, we often want to have a probability distribution with a sharp point at x = 0 . To accomplish this, we can use the exponential distribution.
+A closely related probability distribution that allows us to place a sharp peak of probability mass at an arbitrary point µ is the Laplace distribution.
+
+In some cases, we wish to specify that all of the mass in a probability distribution clusters around a single point. This can be accomplished by defining a PDF using the Dirac delta function
+A common use of the Dirac delta distribution is as a component of an empirical distribution. The Dirac delta distribution is only necessary to define the empirical distribution over continuous variables.For discrete 
+variables, the situation is simpler: an empirical distribution can be conceptualized as a multinoulli distribution, with a probability associated to each possible input value that is simply equal to the empirical 
+frequency of that value in the training set.
+
+
+It is also common to define probability distributions by combining other simpler probability distributions.In Chapter 16, we explore the art of building complex probability distributions from simple ones in more detail.
+The mixture model allows us to briefly glimpse a concept that will be of paramount importance later—the latent variable. A latent variable is a random variable that we cannot observe directly. 
+
+The logistic sigmoid is commonly used to produce the φ parameter of a Bernoulli distribution because its range is (0,1), which lies within the valid range of values for the φ parameter.
+
+The softplus function can be useful for producing the β or σ parameter of a normal distribution because its range is (0,∞).  The softplus function is intended as a smoothed version of the positive part function, x + = max{0, x}. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
