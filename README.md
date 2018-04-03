@@ -100,6 +100,85 @@ The logistic sigmoid is commonly used to produce the φ parameter of a Bernoulli
 
 The softplus function can be useful for producing the β or σ parameter of a normal distribution because its range is (0,∞).  The softplus function is intended as a smoothed version of the positive part function, x + = max{0, x}. 
 
+A proper formal understanding of continuous random variables and probability density functions requires developing probability theory in terms of a branch of mathematics known as measure theory.
+
+The basic intuition behind information theory is that learning that an unlikely event has occurred is more informative than learning that a likely event has occurred. A message saying “the sun rose this morning” is so uninformative as to be unnecessary to send, but a message saying “there was a solar eclipse this morning” is very informative.
+the self-information of an event x = x  I(x) = − log P(x) is defined by meeting the following three requirements:
+1)Likely events should have low information content
+2)Less likely events should have higher information content
+3)Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.	
+
+Kullback-Leibler (KL) divergence can measure how different two separate probability distributions P(x) and Q(x) over the same random variable x distributions are. The KL divergence is 0 if and only if P and Q are the same distribution in
+the case of discrete variables. However, it is not a true distance measure because it is not symmetric for some P and Q. 
+
+A quantity that is closely related to the KL divergence is the cross-entropy.Minimizing the cross-entropy with respect to Q is equivalent to minimizing the KL divergence.
+
+When we represent the factorization of a probability distribution with a graph, we call it a structured probabilistic model or graphical model.
+
+One example of a function that must be stabilized against underflow and overflow is the softmax function. Both of these difficulties can be resolved by instead evaluating softmax(z) where z = x − maxi xi. 
+
+Theano is an example of a software package that automatically detects and stabilizes many common numerically unstable expressions that arise in the context of deep learning.
+
+Conditioning refers to how rapidly a function changes with respect to small changes in its inputs. Functions that change rapidly when their inputs are perturbed slightly can be problematic for scientific computation because rounding errors in the inputs can result in large changes in the output.
+
+Consider the function f(x) = A−1x. When A ∈ Rn×n has an eigenvalue
+decomposition, its condition number is the ratio of the magnitude of the largest and smallest eigenvalue. When this number is large, matrix inversion is particularly sensitive to error in the input.
+
+Karush–Kuhn–Tucker (KKT) approach1 provides a very general solution to constrained optimization. With the KKT approach, we introduce a new function called the generalized Lagrangian or generalized Lagrange function.
+
+4.5 is an example showing how to solve it using gradient-based optimization .
+
+Chapter 5 delivers several principles :
+Regularization is one of the central concerns of the field of machine learning, rivaled in its importance only by optimization.
+
+validation set is part of the training set, and served as estimate the generalization error during or after training, allowing for the hyperparameters to be updated accordingly.
+k-fold cross-validation is used when test set is small.
+
+An important concept underlying many ideas in machine learning is that of a manifold.A manifold is a connected region.
+
+Part II
+These chapters are the most important for a practitioner—someone who wants to begin implementing and using deep learning algorithms to solve real-world problems today.
+
+chapter 6 Deep Feedforward Networks/multilayer perceptrons(MLP)/feedforward neural networks
+modern neural network is best to think of feedforward networks as function approximation machines that are designed to achieve statistical generalization, occasionally drawing some insights from what we
+know about the brain, rather than as models of brain function.
+
+linear models() may be fit efficiently and reliably, but is limited to understand the non-linear interactions between inputs. it either use a generic non-linear transform or manually engineer such a transform. The strategy of deep learning 
+is able to learn this non-linear transform. The advantage is that the human designer only needs to find the right general function family rather than finding precisely the right function.
+
+The first example with deep feedforward networks is learnig XOR logic . treat this as a regression problem and use a mean squared error loss function.(there are more appropriate approaches for modeling binary data)
+f(x;W,c,w,b) = w'max{0,W'x + c} + b.
+the nonlinearity of a neural network causes most interesting loss functions to become non-convex, gradient-based optimizers that merely drive the cost function to a very low value, rather than the linear equation solvers used to train linear regression models or the convex optimization algorithms with global convergence guarantees used to train logistic regression or SVMs.
+
+
+
+An important aspect of the design of a deep neural network is the choice of the cost function.
+Most modern neural networks are trained using maximum likelihood. This means that the cost function is simply the negative log-likelihood, equivalently described as the cross-entropy between the training data and the model distribution.
+
+The negative log-likelihood helps to relieve the activation functions or the output units saturate problem.
+
+Many output units involve an exp function that can saturate when its argument is very negative. The log function in the negative log-likelihood cost function undoes the exp of some output units. 
+
+calculus of variations is used to solve the optimize problem that find a specific function we desire to maximize/minimize, instead of choosing a set of parameters of a known function.
+
+The choice of cost function is tightly coupled with the choice of output unit.Most of the time, we simply use the cross-entropy between the data distribution and the model distribution.
+
+linear units do not saturate, which makes it easy for gradientbased optimization algorithms
+
+using sigmoid output units combined with maximum likelihood to ensures there is always a strong gradient whenever the model has the wrong answer. linear model saturate when the value 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
